@@ -6,8 +6,8 @@ class MipselNoneElfGcc < Formula
 
   depends_on "gmp"
   depends_on "libmpc"
-  depends_on "mpfr"
   depends_on "mipsel-none-elf-binutils"
+  depends_on "mpfr"
 
   # Branch from the Darwin maintainer of GCC, with a few generic fixes and
   # Apple Silicon support, located at https://github.com/iains/gcc-14-branch
