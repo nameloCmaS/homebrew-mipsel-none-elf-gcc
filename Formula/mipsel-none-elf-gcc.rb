@@ -19,7 +19,7 @@ class MipselNoneElfGcc < Formula
 
   def install
     mkdir "mipsel-none-elf-gcc-build" do
-      system "../configure", "--target=mipsel-none-elf",
+      system "../configure", "--target=mipsel-none-elf", # cpu-company-system
                              "--prefix=#{prefix}",
                              "--without-isl",
                              "--disable-nls",
@@ -30,8 +30,8 @@ class MipselNoneElfGcc < Formula
                              "--disable-libgomp",
                              "--disable-werror",
                              "--without-headers",
-                             "--with-as=#{Formula["mipsel-none-elf-binutils"].bin}/mipsel-none-elf-as",
-                             "--with-ld=#{Formula["mipsel-none-elf-binutils"].bin}/mipsel-none-elf-ld",
+                             "--with-as=#{Formula["mipsel-none-elf-binutils"].bin}/mipsel-none-elf-as", # assembler
+                             "--with-ld=#{Formula["mipsel-none-elf-binutils"].bin}/mipsel-none-elf-ld", # linker
                              "--enable-languages=c,c++"
       system "make", "all-gcc"
       system "make", "install-gcc"
