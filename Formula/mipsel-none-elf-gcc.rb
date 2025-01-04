@@ -21,6 +21,8 @@ class MipselNoneElfGcc < Formula
     mkdir "mipsel-none-elf-gcc-build" do
       system "../configure", "--target=mipsel-none-elf", # cpu-company-system
                              "--prefix=#{prefix}",
+                             "--enable-interwork",
+                             "--enable-multilib",
                              "--without-isl",
                              "--disable-nls",
                              "--disable-threads",

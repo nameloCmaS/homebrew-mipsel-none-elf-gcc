@@ -6,7 +6,9 @@ class MipselNoneElfBinutils < Formula
 
   def install
     system "./configure", "--target=mipsel-none-elf",
-                          "--disable-multilib",
+                          # "--disable-multilib",
+                          "--enable-multilib",
+                          "--enable-interwork",
                           "--disable-nls",
                           "--disable-werror",
                           "--prefix=#{prefix}"
